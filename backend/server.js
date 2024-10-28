@@ -5,19 +5,23 @@ const authRoutes = require('./routes/LogRegis');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173', // อนุญาตให้เข้าถึงเฉพาะที่มาจาก URL นี้
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // อนุญาต HTTP methods ที่ต้องการ
+    credentials: true, // อนุญาตให้มีการส่งข้อมูล cookies ถ้ามีการใช้งาน
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use('/api',authRoutes);
+app.use('/api', authRoutes);
 
 // เริ่ม server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
 
 // ปิดการเชื่อมต่อฐานข้อมูลเมื่อเซิร์ฟเวอร์หยุดทำงาน
 process.on('SIGINT', () => {

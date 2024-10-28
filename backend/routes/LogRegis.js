@@ -9,7 +9,6 @@ app.post('/register', (req, res) =>{
   db.query("INSERT INTO users (username, password, email) VALUE (?, ?, ?)", 
     [newUser.username, newUser.password, newUser.email], 
     (err, results) =>{
-      console.log(results)
       if(err){
           res.status(400).json({msg: "ฐานข้อมูลขัดข้อง, ไม่สามารถลงทะเบียนได้"});
           console.log(err)
@@ -26,7 +25,6 @@ app.post("/login", (req, res) => {
     'SELECT username FROM users WHERE username = ? AND password = ?',
     [username, password],
     (err, results) => {
-      console.log(err);
       if (err) {
         res.status(400).json({ msg: "ฐานข้อมูลขัดข้อง, ไม่สามารถ log in ได้" });
         console.log(err);
@@ -37,7 +35,7 @@ app.post("/login", (req, res) => {
 });
 
 //สร้าง API สำหรับดึงข้อมูลจากตาราง ie_data
-app.get('/ie_data', (req, res) => {
+app.get('/data', (req, res) => {
   const query = 'SELECT * FROM ie_data';
 
   db.query(query, (err, results) => {
@@ -51,5 +49,41 @@ app.get('/ie_data', (req, res) => {
     res.json(results);
   });
 });
+
+app.post('/Add_data', (req, res) => {
+  // รับข้อมูลจาก req.body
+  const { Data, SP_Comp, CPI, GS10, CAPE, TR_CAPE, Yield, Monthly_TotalBond, R10Year_Stock, R10Year_Bonds } = req.body;
+  
+  // ตรวจสอบว่าค่าเหล่านี้ถูกต้อง ไม่ว่างเปล่า
+  if (!Data || !SP_Comp || !CPI || !GS10 || !CAPE || !TR_CAPE || !Yield || !Monthly_TotalBond || !R10Year_Stock || !R10Year_Bonds) {
+    return res.status(400).json({ msg: "ข้อมูลไม่ครบถ้วน" });
+  }
+
+  // คำสั่ง SQL สำหรับแทรกข้อมูลลงในตาราง data_stock
+  const query = `INSERT INTO ie_data (
+    Data, 
+    SP_Comp, 
+    CPI, 
+    GS10, 
+    CAPE,
+    TR_CAPE, 
+    Yield, 
+    Monthly_TotalBond, 
+    R10Year_Stock, 
+    R10Year_Bonds
+  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,?)`;
+
+  // รันคำสั่ง SQL โดยส่งค่าจาก req.body ลงไปในฐานข้อมูล
+  db.query(query, [Data, SP_Comp, CPI, GS10, CAPE, TR_CAPE, Yield, Monthly_TotalBond, R10Year_Stock, R10Year_Bonds], 
+  (err, results) => {
+    if (err) {
+      console.error('Error inserting data:', err);
+      return res.status(500).send('Server error');
+    }
+    // ส่งข้อมูลผลลัพธ์กลับเป็น JSON
+    res.json({ msg: 'Data added successfully', results });
+  });
+});
+
 module.exports = app;
 

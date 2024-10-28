@@ -1,0 +1,69 @@
+/* Reset CSS */
+
+
+body {
+  justify-content: center;
+}
+
+form {
+  background-color: #0f55a5; /* สีพื้นหลังของกรอบ */
+  border-radius: 15px; /* มุมโค้งกรอบ */
+  box-shadow: 0 4px 10px rgb(0, 0, 0); /* เงาของกรอบ */
+  padding: 25px; /* ความสูง ภายกรอบ */
+  width: 300px; /* ความกว้างของกรอบ แนวนอน */
+}
+
+label {
+  font-weight: bold; /* ตัวหนาlabel */
+  margin-top: px;
+  display: block; /* label แสดงในบรรทัดใหม่ */
+  color: rgb(255, 255, 255); /* สีตัวอักษรเป็นสีขาว */
+  
+}
+
+input {
+  width: 100%; /* ความกว้างเต็ม */
+  padding: 10px; /* เพิ่ม padding ภายใน input */
+  margin-top: 10px; /* ระยะห่างด้านบนของ input */
+  margin-bottom: 15px; /* ระยะห่างด้านล่างของ input */
+  border: 1px solid #ccc; /* ขอบของ input */
+  border-radius: 4px; /* มุมโค้ง */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  transition: border-color 0.3s; /* เปลี่ยนสีขอบเมื่อมีการโฟกัส */
+  color: white; /* สีตัวอักษรเป็นสีขาว */
+  background-color: #023160; /* เปลี่ยนสีพื้นหลังของ input */
+}
+
+input:focus {
+  border-color: #6eaef7; /* เปลี่ยนสีขอบเมื่อโฟกัส */
+  outline: none; /* ไม่แสดงขอบนอก */
+}
+
+button {
+  background-color: #ffffff; /* สีพื้นหลังของปุ่ม */
+  color: #0f55a5; /* สีตัวอักษรของปุ่ม */
+  border: none; /* ไม่มีขอบ */
+  border-radius: 4px; /* มุมโค้ง */
+  padding: 10px; /* เพิ่ม padding ภายในปุ่ม */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer */
+  font-size: 16px; /* ขนาดตัวอักษร */
+  transition: background-color 0.3s; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+}
+
+button:hover {
+  background-color: #70b4fc; /* สีพื้นหลังเมื่อ hover */
+}
+
+a {
+  display: block; /* ให้ลิงก์แสดงในบรรทัดใหม่ */
+  margin-top: 10px; /* ระยะห่างด้านบน */
+  color: #dfdfdf; /* สีของลิงก์ */
+  text-align: center; /* จัดข้อความกลาง */
+
+}
+
+a:hover {
+  text-decoration: underline; /* ขีดเส้นใต้เมื่อ hover */
+}
+
+

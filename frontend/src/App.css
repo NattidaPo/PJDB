@@ -1,0 +1,28 @@
+/* Global Styles */
+body {
+    margin: 0; /* กำจัด margin ของ body */
+    font-family: 'Arial', sans-serif; /* ตั้งค่า font ของหน้าเว็บ */
+    background-color: #ffffff; /* สีพื้นหลังของหน้าเว็บ */
+    color: #333; /* สีตัวอักษร */
+  }
+  
+  /* Centering the main content */
+  .container {
+    max-width: 1200px; /* ความกว้างสูงสุดของเนื้อหา */
+    margin: 0 auto; /* จัดกลางหน้าจอ */
+    padding: 20px; /* เพิ่ม padding รอบ ๆ เนื้อหา */
+  }
+  
+  /* Link Styles */
+  a {
+    text-decoration: none; /* ไม่มีเส้นใต้ */
+    color: inherit; /* ใช้สีตัวอักษรจาก parent element */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px; /* ลด padding สำหรับหน้าจอเล็ก */
+    }
+  }
+  

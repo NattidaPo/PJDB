@@ -1,0 +1,57 @@
+/* Navbar.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* ทำให้ body และ html มีความสูงเต็ม */
+}
+
+.navbar {
+  display: flex; /* ใช้ Flexbox */
+  justify-content: space-between; /* จัดเรียงให้มีพื้นที่ระหว่างกัน */
+  align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+  background-color: #185aa5; /* สีพื้นหลังของ navbar */
+  color: white; /* สีตัวอักษร */
+  padding: 0px 100px; /* เพิ่ม padding รอบ ๆ navbar */
+  height: 100px; /* ความสูงของ navbar */
+  position: fixed; /* ทำให้ navbar อยู่ที่ตำแหน่ง fixed */
+  top: 0; /* อยู่ที่ด้านบนสุด */
+  left: 0; /* เริ่มที่ขอบซ้าย */
+  width: 100%; /* ความกว้างเต็ม */
+  z-index: 1000; /* ให้แน่ใจว่ามีลำดับสูงกว่าส่วนอื่น */
+}
+
+.navbar-links {
+  display: flex; /* ใช้ Flexbox */
+  gap: 15px; /* ระยะห่างระหว่างลิงค์ */
+}
+
+.navbar a {
+  color: rgb(253, 253, 253); /* สีตัวอักษรของลิงค์ */
+  text-decoration: none; /* ไม่มีเส้นใต้ */
+}
+
+.navbar a:hover {
+  text-decoration: underline; /* เมื่อเอาเมาส์ไปวางจะแสดงเส้นใต้ */
+}
+
+/* เพิ่มระยะห่างด้านบนสำหรับเนื้อหาอื่น ๆ เพื่อไม่ให้ถูกซ้อนทับ */
+.fullscreen {
+  padding-top: 120px; /* ให้เนื้อหาภายในเลื่อนลงไปด้านล่าง navbar */
+  height: calc(100vh - 100px); /* ความสูงเต็มหน้าจอลบความสูงของ navbar */
+  display: flex; /* ใช้ Flexbox */
+  flex-direction: column; /* จัดเรียงในแนวตั้ง */
+  justify-content: center; /* จัดให้เนื้อหาอยู่กลาง */
+  align-items: center; /* จัดให้เนื้อหาอยู่กลาง */
+  background-color: #f0f2f5; /* สีพื้นหลังของเนื้อหา */
+}
+.graph-block1{
+  background-color: #ffffff; /* สีพื้นหลังของกราฟ */
+  border: 1px solid #ccc; /* ขอบของกราฟ */
+  border-radius: 6px; /* มุมโค้ง */
+  padding: 120px; /* เพิ่ม padding ภายในกราฟ */
+  width: 1350px; /* กำหนดความกว้างของกราฟ */
+  text-align: center; /* จัดข้อความให้อยู่กลาง */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* เงาของกราฟ */
+  transition: transform 0.3s; /* เอฟเฟกต์การเปลี่ยนรูปเมื่อ hover */
+  margin-left: 100px;
+}

@@ -1,0 +1,145 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    
+    background-color: #f0f3f5; /* สีพื้นหลังของหน้า */
+  }
+  
+  /* Main Page Container */
+  .main-page {
+    
+    flex-direction: column;
+    height: 71vh; /* สูงเต็มหน้าจอ */
+  }
+  
+ 
+  
+  .user-info {
+    display: flex;
+    align-items: center; /* จัดแนวกลางแนวตั้ง */
+  }
+  
+  .dropdown-toggle {
+    background: none; /* ไม่มีพื้นหลัง */
+    border: none; /* ไม่มีขอบ */
+    color: white; /* สีตัวอักษร */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer */
+    margin-left: 10px; /* ระยะห่างด้านซ้าย */
+  }
+  
+  /* Dropdown Menu Styles */
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute; /* ให้สามารถวางอยู่เหนือส่วนอื่น */
+    background-color: rgb(20, 68, 142); /* สีพื้นหลังของ dropdown */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1); /* เงาของ dropdown */
+    border-radius: 4px; /* มุมโค้ง */
+    margin-top: 10px; /* ระยะห่างด้านบน */
+    right: 1050px; /* ทำให้ dropdown แสดงที่ด้านขวา */
+    width: 200px; /* กำหนดความกว้างของ dropdown */
+    z-index: 1000; /* ให้อยู่เหนือองค์ประกอบอื่น */
+}
+
+  
+  .dropdown-menu ul {
+    list-style: none; /* ไม่มีสัญลักษณ์จุดในรายการ */
+    padding: 10px; /* เพิ่ม padding รอบ ๆ รายการ */
+  }
+  
+  .dropdown-menu li {
+    padding: 10px; /* เพิ่ม padding ภายในรายการ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็น pointer */
+    transition: background-color 0.3s; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #051f7c; /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+  }
+  
+  /* Content Styles */
+  .content {
+    padding: 25px; /* เพิ่ม padding รอบ ๆ content */
+  }
+  
+  h1 {
+    margin-bottom: 27px; /* ระยะห่างด้านล่างของหัวเรื่อง */
+    font-size: 35px;
+  }
+  
+  /* Grid Container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
+    gap: 20px; /* ระยะห่างระหว่างกราฟ */
+    width: 100%; /* ความกว้างเต็ม */
+    z-index: 10000;
+  }
+  
+  /* Graph Blocks */
+  .graph-block {
+    background-color: #ffffff; /* สีพื้นหลังของกราฟ */
+    border: 1px solid #ccc; /* ขอบของกราฟ */
+    border-radius: 6px; /* มุมโค้ง */
+    padding: 50px; /* เพิ่ม padding ภายในกราฟ */
+    width: 700px; /* กำหนดความกว้างของกราฟ */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* เงาของกราฟ */
+    transition: transform 0.3s; /* เอฟเฟกต์การเปลี่ยนรูปเมื่อ hover */
+  }
+  
+  .graph-block:hover {
+    transform: translateY(-10px); /* ยกกราฟขึ้นเล็กน้อยเมื่อ hover */
+  }
+ /* Popup Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Popup Content */
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* กำหนดความกว้างสูงสุด */
+    max-height: 80vh; /* ความสูงสูงสุด */
+    overflow-y: auto; /* ให้สามารถเลื่อนเมื่อเนื้อหามาก */
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .popup-content label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .popup-content button {
+    margin-right: 10px;
+  }
+  
